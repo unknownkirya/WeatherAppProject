@@ -8,16 +8,16 @@
 import UIKit
 
 class WeatherTableViewCell: UITableViewCell {
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    
+    @IBOutlet weak var cityNameLabel: UILabel!
+    
+    @IBOutlet weak var conditionNameLabel: UILabel!
+    
+    @IBOutlet weak var temperatureLabel: UILabel!
+    
+    func configure(weather: Weather) {
+        self.cityNameLabel.text = weather.city
+        self.conditionNameLabel.text = weather.conditionStr
+        self.temperatureLabel.text = weather.temperature
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-
 }

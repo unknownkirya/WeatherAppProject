@@ -6,24 +6,48 @@
 //
 
 import UIKit
+import SwiftSVG
 
 class DetailViewController: UIViewController {
-
+    
+    
+    @IBOutlet weak var nameCityLabel: UILabel!
+    @IBOutlet weak var viewOfCity: UIView!
+    @IBOutlet weak var temperature: UILabel!
+    @IBOutlet weak var condition: UILabel!
+    @IBOutlet weak var preasureMm: UILabel!
+    @IBOutlet weak var windDirAndSpeed: UILabel!
+    @IBOutlet weak var minMaxTempDay: UILabel!
+    @IBOutlet weak var minMaxTempNight: UILabel!
+    
+    var weather: Weather? = nil
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        refreshLabels()
+        
     }
     
+    func refreshLabels() {
+        
+        guard let url = URL(string: weather?.conditionImage ?? "") else { return }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        let weatherImage = UIView(SVGURL: url) { (image) in
+            image.resizeToFit(self.viewOfCity.bounds)
+        }
+        
+        nameCityLabel.text = weather?.city
+        viewOfCity.addSubview(weatherImage)
+        temperature.text = weather?.temperature
+        condition.text = weather?.conditionStr
+        preasureMm.text = weather?.pressureMm
+        windDirAndSpeed.text = weather?.windDirAndSpeed
+        minMaxTempDay.text = weather?.tempMinMaxDay
+        minMaxTempNight.text = weather?.tempMinMaxNight
+        
     }
-    */
+    
 
 }

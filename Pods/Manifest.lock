@@ -1,0 +1,16 @@
+PODS:
+  - SwiftSVG (2.3.2)
+
+DEPENDENCIES:
+  - SwiftSVG (~> 2.0)
+
+SPEC REPOS:
+  trunk:
+    - SwiftSVG
+
+SPEC CHECKSUMS:
+  SwiftSVG: ca7f64e403b8ea7ea8eba8c823b83ba4a059834c
+
+PODFILE CHECKSUM: 5b4969f246bf966b3a7c556ac6de8389c2a7fd16
+
+COCOAPODS: 1.11.3

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="e2C-dn-KP7">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="L05-NG-dKr">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Main Table View Controller-->
+        <!--Погода-->
         <scene sceneID="ihq-CB-Nc8">
             <objects>
                 <tableViewController id="e2C-dn-KP7" customClass="MainTableViewController" customModule="WeatherAppProject" customModuleProvider="target" sceneMemberID="viewController">
@@ -17,35 +17,43 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="49" id="ROD-ox-eQg">
-                                <rect key="frame" x="0.0" y="44.5" width="414" height="49"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="53" id="ROD-ox-eQg" customClass="WeatherTableViewCell" customModule="WeatherAppProject" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="44.5" width="414" height="53"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ROD-ox-eQg" id="fTU-8X-Kow">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="53"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Город" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="egH-pu-AsP">
-                                            <rect key="frame" x="20" y="8" width="59.5" height="33"/>
-                                            <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="23"/>
+                                            <rect key="frame" x="20" y="8" width="169" height="37"/>
+                                            <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="19"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Состояние" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JEg-HB-7Ri">
-                                            <rect key="frame" x="214" y="8" width="80" height="33"/>
-                                            <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="17"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Состояние" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JEg-HB-7Ri">
+                                            <rect key="frame" x="214" y="8" width="101" height="37"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="80" id="utu-H8-eJK"/>
+                                                <constraint firstAttribute="width" constant="101" id="wCp-Zi-Y2P"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="14"/>
                                             <color key="textColor" systemColor="systemGrayColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100 °C" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pfn-2H-Qo5">
-                                            <rect key="frame" x="323" y="8" width="61" height="33"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100 °C" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pfn-2H-Qo5">
+                                            <rect key="frame" x="323" y="8" width="61" height="37"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="61" id="3d6-QB-ssk"/>
+                                                <constraint firstAttribute="width" constant="61" id="n4b-AS-RUm"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="21"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="pfn-2H-Qo5" firstAttribute="leading" secondItem="JEg-HB-7Ri" secondAttribute="trailing" constant="29" id="0wy-P0-gDS"/>
-                                        <constraint firstItem="JEg-HB-7Ri" firstAttribute="leading" secondItem="egH-pu-AsP" secondAttribute="trailing" constant="134.5" id="E3y-JH-bES"/>
+                                        <constraint firstItem="pfn-2H-Qo5" firstAttribute="leading" secondItem="JEg-HB-7Ri" secondAttribute="trailing" constant="8" id="0wy-P0-gDS"/>
+                                        <constraint firstItem="JEg-HB-7Ri" firstAttribute="leading" secondItem="egH-pu-AsP" secondAttribute="trailing" constant="25" id="51F-Mc-QEm"/>
                                         <constraint firstAttribute="bottom" secondItem="egH-pu-AsP" secondAttribute="bottom" constant="8" id="I03-zC-DzW"/>
                                         <constraint firstItem="JEg-HB-7Ri" firstAttribute="top" secondItem="fTU-8X-Kow" secondAttribute="top" constant="8" id="OLl-lc-apk"/>
                                         <constraint firstAttribute="bottom" secondItem="pfn-2H-Qo5" secondAttribute="bottom" constant="8" id="PgQ-kI-QOe"/>
@@ -56,6 +64,12 @@
                                         <constraint firstAttribute="bottom" secondItem="JEg-HB-7Ri" secondAttribute="bottom" constant="8" id="q1R-29-Evt"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="cityNameLabel" destination="egH-pu-AsP" id="Fvr-0x-fCN"/>
+                                    <outlet property="conditionNameLabel" destination="JEg-HB-7Ri" id="3LZ-Dr-lzA"/>
+                                    <outlet property="temperatureLabel" destination="pfn-2H-Qo5" id="rxv-Xo-IoO"/>
+                                    <segue destination="dy9-h0-OrM" kind="show" identifier="showDetail" id="0sg-nj-4Uu"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -63,25 +77,179 @@
                             <outlet property="delegate" destination="e2C-dn-KP7" id="0CO-dD-Qro"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="Погода" id="iOZ-SK-XE3">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="8hq-Cn-lWa">
+                            <connections>
+                                <action selector="pressPlusButton:" destination="e2C-dn-KP7" id="v7L-wv-ESC"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AVY-CA-FyI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2.8985507246376816" y="48.883928571428569"/>
+            <point key="canvasLocation" x="913.04347826086962" y="48.883928571428569"/>
         </scene>
-        <!--View Controller-->
+        <!--Detail View Controller-->
         <scene sceneID="7ph-Zf-jfI">
             <objects>
-                <viewController id="dy9-h0-OrM" sceneMemberID="viewController">
+                <viewController id="dy9-h0-OrM" customClass="DetailViewController" customModule="WeatherAppProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="EUR-dw-cov">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100°C" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vNc-Et-eGj">
+                                <rect key="frame" x="129" y="416" width="156.5" height="39.5"/>
+                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="34"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Город" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bbf-49-FhD">
+                                <rect key="frame" x="75" y="125" width="264" height="34.5"/>
+                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Состояние" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lkg-oX-nwn">
+                                <rect key="frame" x="71" y="487" width="272" height="32.5"/>
+                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="28"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="SQZ-RC-sgI" userLabel="Left Stack">
+                                <rect key="frame" x="267" y="559" width="126.5" height="195"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1000 мм. рт. ст." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JXk-06-0sl">
+                                        <rect key="frame" x="0.0" y="0.0" width="126.5" height="23"/>
+                                        <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ю.з. 1000 м/c" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hwZ-UU-myO">
+                                        <rect key="frame" x="0.0" y="43" width="126.5" height="23"/>
+                                        <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100°C/100°C" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uo0-P2-oMg">
+                                        <rect key="frame" x="0.0" y="86" width="126.5" height="23"/>
+                                        <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100°C/100°C" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PRW-DT-5MB">
+                                        <rect key="frame" x="0.0" y="129" width="126.5" height="23"/>
+                                        <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5CC-vt-17E">
+                                        <rect key="frame" x="0.0" y="172" width="126.5" height="23"/>
+                                        <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="PRW-DT-5MB" secondAttribute="trailing" id="e3d-Hr-B4r"/>
+                                    <constraint firstItem="PRW-DT-5MB" firstAttribute="top" secondItem="Uo0-P2-oMg" secondAttribute="bottom" constant="20" id="fUR-fr-LuC"/>
+                                    <constraint firstItem="5CC-vt-17E" firstAttribute="top" secondItem="PRW-DT-5MB" secondAttribute="bottom" constant="20" id="fhf-ra-ANz"/>
+                                </constraints>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="INO-Xn-bc8" userLabel="Right Stack">
+                                <rect key="frame" x="20" y="559" width="246.5" height="193"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Давление:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fcI-zG-CaG">
+                                        <rect key="frame" x="0.0" y="0.0" width="84" height="23"/>
+                                        <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ветер:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ezH-F1-WOA">
+                                        <rect key="frame" x="0.0" y="43" width="54" height="23"/>
+                                        <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Мин/Макс температура днем:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gwc-Pr-xtu">
+                                        <rect key="frame" x="0.0" y="86" width="234.5" height="22"/>
+                                        <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="19"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Мин/Макс температура ночью:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="whj-Am-byy">
+                                        <rect key="frame" x="0.0" y="128" width="246.5" height="22"/>
+                                        <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="19"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="УФ индекс:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B9T-VT-3we">
+                                        <rect key="frame" x="0.0" y="170" width="98" height="23"/>
+                                        <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZF9-V5-nZ0">
+                                <rect key="frame" x="91" y="200" width="232" height="161"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="K0r-uv-AUk"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="K0r-uv-AUk" firstAttribute="trailing" secondItem="Lkg-oX-nwn" secondAttribute="trailing" constant="71" id="2Lg-Nz-UjQ"/>
+                            <constraint firstItem="K0r-uv-AUk" firstAttribute="trailing" secondItem="vNc-Et-eGj" secondAttribute="trailing" constant="128.5" id="608-g0-kKO"/>
+                            <constraint firstItem="vNc-Et-eGj" firstAttribute="leading" secondItem="K0r-uv-AUk" secondAttribute="leading" constant="129" id="CyC-2y-UhU"/>
+                            <constraint firstItem="ZF9-V5-nZ0" firstAttribute="leading" secondItem="K0r-uv-AUk" secondAttribute="leading" constant="91" id="G3H-SZ-BrY"/>
+                            <constraint firstItem="Bbf-49-FhD" firstAttribute="leading" secondItem="K0r-uv-AUk" secondAttribute="leading" constant="75" id="IAi-qg-1fy"/>
+                            <constraint firstItem="ZF9-V5-nZ0" firstAttribute="top" secondItem="Bbf-49-FhD" secondAttribute="bottom" constant="40.5" id="URe-wj-WOT"/>
+                            <constraint firstItem="Bbf-49-FhD" firstAttribute="top" secondItem="K0r-uv-AUk" secondAttribute="top" constant="37" id="WbN-iU-PvJ"/>
+                            <constraint firstItem="Lkg-oX-nwn" firstAttribute="leading" secondItem="K0r-uv-AUk" secondAttribute="leading" constant="71" id="Zg3-Tl-YY1"/>
+                            <constraint firstItem="Lkg-oX-nwn" firstAttribute="top" secondItem="vNc-Et-eGj" secondAttribute="bottom" constant="31.5" id="fFr-CT-s4e"/>
+                            <constraint firstItem="vNc-Et-eGj" firstAttribute="top" secondItem="ZF9-V5-nZ0" secondAttribute="bottom" constant="55" id="gG9-Hj-6Uv"/>
+                            <constraint firstItem="K0r-uv-AUk" firstAttribute="trailing" secondItem="Bbf-49-FhD" secondAttribute="trailing" constant="75" id="heC-aG-1zK"/>
+                            <constraint firstItem="K0r-uv-AUk" firstAttribute="bottom" secondItem="INO-Xn-bc8" secondAttribute="bottom" constant="110" id="oaz-kf-EvY"/>
+                            <constraint firstItem="INO-Xn-bc8" firstAttribute="top" secondItem="Lkg-oX-nwn" secondAttribute="bottom" constant="39.5" id="oqb-d3-Ot7"/>
+                            <constraint firstItem="SQZ-RC-sgI" firstAttribute="leading" secondItem="INO-Xn-bc8" secondAttribute="trailing" constant="0.5" id="sTm-Rf-8hF"/>
+                            <constraint firstItem="SQZ-RC-sgI" firstAttribute="top" secondItem="INO-Xn-bc8" secondAttribute="top" id="xDO-kE-kB9"/>
+                            <constraint firstItem="INO-Xn-bc8" firstAttribute="leading" secondItem="K0r-uv-AUk" secondAttribute="leading" constant="20" id="yGx-3T-Mam"/>
+                            <constraint firstItem="K0r-uv-AUk" firstAttribute="trailing" secondItem="ZF9-V5-nZ0" secondAttribute="trailing" constant="91" id="yJJ-gK-JQ7"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="6fW-0c-LIp"/>
+                    <connections>
+                        <outlet property="condition" destination="Lkg-oX-nwn" id="zx0-4a-034"/>
+                        <outlet property="minMaxTempDay" destination="Uo0-P2-oMg" id="jSB-2h-iDM"/>
+                        <outlet property="minMaxTempNight" destination="PRW-DT-5MB" id="qqb-9M-lct"/>
+                        <outlet property="nameCityLabel" destination="Bbf-49-FhD" id="zQa-cx-zRO"/>
+                        <outlet property="preasureMm" destination="JXk-06-0sl" id="ch0-5q-GhP"/>
+                        <outlet property="temperature" destination="vNc-Et-eGj" id="Jke-wN-lZq"/>
+                        <outlet property="viewOfCity" destination="ZF9-V5-nZ0" id="m1k-LW-A6l"/>
+                        <outlet property="windDirAndSpeed" destination="hwZ-UU-myO" id="nRb-90-GtP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4q8-wf-0vT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="739" y="49"/>
+            <point key="canvasLocation" x="1647.826086956522" y="48.883928571428569"/>
+        </scene>
+        <!--Погода-->
+        <scene sceneID="QL7-sm-fH9">
+            <objects>
+                <navigationController title="Погода" automaticallyAdjustsScrollViewInsets="NO" id="L05-NG-dKr" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="T9V-we-HOu">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="e2C-dn-KP7" kind="relationship" relationship="rootViewController" id="Zjj-gK-tfO"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UJE-Hw-iRF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2.8985507246376816" y="48.883928571428569"/>
         </scene>
     </scenes>
     <resources>
