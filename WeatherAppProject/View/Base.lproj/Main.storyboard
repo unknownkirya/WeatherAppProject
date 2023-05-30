@@ -15,9 +15,9 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="7MC-fo-dtS">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.81568627450980391" green="0.94117647058823528" blue="0.75294117647058822" alpha="0.95061041384327172" colorSpace="custom" customColorSpace="displayP3"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="53" id="ROD-ox-eQg" customClass="WeatherTableViewCell" customModule="WeatherAppProject" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" alpha="0.0" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="53" id="ROD-ox-eQg" customClass="WeatherTableViewCell" customModule="WeatherAppProject" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="44.5" width="414" height="53"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ROD-ox-eQg" id="fTU-8X-Kow">
@@ -64,6 +64,7 @@
                                         <constraint firstAttribute="bottom" secondItem="JEg-HB-7Ri" secondAttribute="bottom" constant="8" id="q1R-29-Evt"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" red="0.78236724388733869" green="0.90727475508054767" blue="0.72585468918463281" alpha="0.89640579740000004" colorSpace="custom" customColorSpace="displayP3"/>
                                 <connections>
                                     <outlet property="cityNameLabel" destination="egH-pu-AsP" id="Fvr-0x-fCN"/>
                                     <outlet property="conditionNameLabel" destination="JEg-HB-7Ri" id="3LZ-Dr-lzA"/>
@@ -192,11 +193,11 @@
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZF9-V5-nZ0">
                                 <rect key="frame" x="91" y="200" width="232" height="161"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" red="0.72376668864321181" green="0.8393184278926531" blue="0.67148701448313708" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="K0r-uv-AUk"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.81568627449999997" green="0.94117647059999998" blue="0.75294117650000003" alpha="0.89640579740000004" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="K0r-uv-AUk" firstAttribute="trailing" secondItem="Lkg-oX-nwn" secondAttribute="trailing" constant="71" id="2Lg-Nz-UjQ"/>
                             <constraint firstItem="K0r-uv-AUk" firstAttribute="trailing" secondItem="vNc-Et-eGj" secondAttribute="trailing" constant="128.5" id="608-g0-kKO"/>
@@ -225,6 +226,7 @@
                         <outlet property="nameCityLabel" destination="Bbf-49-FhD" id="zQa-cx-zRO"/>
                         <outlet property="preasureMm" destination="JXk-06-0sl" id="ch0-5q-GhP"/>
                         <outlet property="temperature" destination="vNc-Et-eGj" id="Jke-wN-lZq"/>
+                        <outlet property="uvIndex" destination="5CC-vt-17E" id="H4W-b1-Hhx"/>
                         <outlet property="viewOfCity" destination="ZF9-V5-nZ0" id="m1k-LW-A6l"/>
                         <outlet property="windDirAndSpeed" destination="hwZ-UU-myO" id="nRb-90-GtP"/>
                     </connections>
@@ -253,9 +255,6 @@
         </scene>
     </scenes>
     <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
         <systemColor name="systemGrayColor">
             <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

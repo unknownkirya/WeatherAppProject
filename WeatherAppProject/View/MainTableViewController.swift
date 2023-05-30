@@ -21,7 +21,6 @@ class MainTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         if citiesWeatherArr.isEmpty {
             citiesWeatherArr = Array(repeating: emptArr, count: citiesArr.count)
         }

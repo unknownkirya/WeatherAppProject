@@ -19,6 +19,7 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var windDirAndSpeed: UILabel!
     @IBOutlet weak var minMaxTempDay: UILabel!
     @IBOutlet weak var minMaxTempNight: UILabel!
+    @IBOutlet weak var uvIndex: UILabel!
     
     var weather: Weather? = nil
     
@@ -43,9 +44,10 @@ class DetailViewController: UIViewController {
         temperature.text = weather?.temperature
         condition.text = weather?.conditionStr
         preasureMm.text = weather?.pressureMm
-        windDirAndSpeed.text = weather?.windDirAndSpeed
+        windDirAndSpeed.text = (weather?.windDirStr ?? "") + (weather?.windSpeed ?? "")
         minMaxTempDay.text = weather?.tempMinMaxDay
         minMaxTempNight.text = weather?.tempMinMaxNight
+        uvIndex.text = weather?.uvIndex
         
     }
     

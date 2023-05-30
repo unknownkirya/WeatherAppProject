@@ -16,7 +16,9 @@ struct Weather {
     var conditionImage: String = ""
     var condition: String = "Загрузка..."
     var pressureMm: String = ""
-    var windDirAndSpeed: String = ""
+    var windDir: String = ""
+    var windSpeed: String = ""
+    var uvIndex: String = ""
     
     var tempMinMaxDay: String = ""
     var tempMinMaxNight: String = ""
@@ -49,6 +51,23 @@ struct Weather {
         
     }
     
+    var windDirStr: String {
+        switch windDir {
+        case "nw":                  return "с/з "
+        case "n":                   return "с "
+        case "ne":                  return "с/в "
+        case "e":                   return "в "
+        case "se":                  return "ю/в "
+        case "s":                   return "ю "
+        case "sw":                  return "ю/з "
+        case "w":                   return "з "
+        case "c":                   return "штиль "
+            
+        default: return "Загрузка..."
+        }
+        
+    }
+    
     init?(weatherData: WeatherData) {
         // info
         url = weatherData.info.url
@@ -60,7 +79,9 @@ struct Weather {
         conditionImage = "https://yastatic.net/weather/i/icons/funky/dark/" + weatherData.fact.icon + ".svg"
         condition = weatherData.fact.condition
         pressureMm = String(weatherData.fact.pressureMm) + " мм. рт. ст."
-        windDirAndSpeed = String(weatherData.fact.windDir) + " " + String(weatherData.fact.windSpeed) + "м/с"
+        windDir = weatherData.fact.windDir
+        windSpeed = String(weatherData.fact.windSpeed) + " м/с"
+        uvIndex = String(weatherData.fact.uvIndex)
         
         // forecasts
         tempMinMaxDay = String(weatherData.forecasts.first?.parts.day.tempMin ?? 0) + "°C" + "/" + String(weatherData.forecasts.first?.parts.day.tempMax ?? 0) + "°C"
